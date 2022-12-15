@@ -23,7 +23,7 @@ import {
   Image,
   Flex,
 } from '@chakra-ui/react';
-import { FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
+import { FaTwitter, FaYoutube, FaInstagram ,FaFacebook} from 'react-icons/fa';
 
 // import AppStoreBadge from '@/components/AppStoreBadge';
 import ReactAppStoreBadge from 'react-app-store-badge';
@@ -70,9 +70,10 @@ export default function LargeWithAppLinksAndSocial() {
       bg={useColorModeValue('#0f0617')}
       color={useColorModeValue('white')} mt={5}>
       <Container as={Stack} maxW={'8xl'} py={10}>
-      <Flex direction='row' gap={4}  justifyContent="flex-start" p={2} >
+      <Flex justifyContent={'space-between'}>
+      <Stack direction='row' gap={4}  justifyContent="flex-start" p={2} >
             <Text fontSize="xl" fontWeight="500" >Download Apps</Text>
-            <Image  w="100px" h="45px"  src="https://e7.pngegg.com/pngimages/384/968/png-clipart-google-play-app-store-android-mobile-app-android-text-logo.png" />
+            <Image  w="100px" h="45px" borderRadius={5} src="https://w7.pngwing.com/pngs/91/37/png-transparent-google-play-android-app-store-android-text-logo-microsoft-store.png" />
             <Image  w="100px" h="45px"  src="https://www.seekpng.com/png/full/22-227594_download-on-the-app-store-badge-available-on.png" />
            
             {/* <AppStoreBadge /> */}
@@ -84,65 +85,13 @@ export default function LargeWithAppLinksAndSocial() {
   {/* <Box data-app-store-url="https://apps.apple.com/us/app/cheerswipe/id1468158095?ls=1"></Box> */}
             {/* <PlayStoreBadge /> */}
         
-          </Flex>
-          <Flex gap={6}>
-             <Link href={'#'}>About US</Link> |
-             <Link href={'#'}>Help Center</Link> |
-             <Link href={'#'}>Privacy Policy </Link> |
-             <Link href={'#'}>Terms of Use</Link>
-           </Flex> <br/><br/>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 6 }} spacing={8}>
-          <Stack align={'flex-start'}>
-            <ListHeader>Popular TV Shows</ListHeader>
-            <Link href={'#'}>About Us</Link>
-            <Link href={'#'}>Blog</Link>
-            <Link href={'#'}>Careers</Link>
-            <Link href={'#'}>Contact Us</Link>
           </Stack>
-
-          <Stack align={'flex-start'}>
-            <ListHeader fontSize="sm" >Premium Movies</ListHeader>
-            <Link href={'#'}>Help Center</Link>
-            <Link href={'#'}>Safety Center</Link>
-            <Link href={'#'}>Community Guidelines</Link>
-          </Stack>
-
-          <Stack align={'flex-start'}>
-            <Text fontSize="md" fontWeight="600">Popular LIVE TV Channels</Text>
-            <Link href={'#'}>Cookies Policy</Link>
-            <Link href={'#'}>Privacy Policy</Link>
-            <Link href={'#'}>Terms of Service</Link>
-            <Link href={'#'}>Law Enforcement</Link>
-          </Stack>
-
-          <Stack align={'flex-start'}>
-            <ListHeader>Popular Web Series</ListHeader>
-            <Link href={'#'}>Help Center</Link>
-            <Link href={'#'}>Safety Center</Link>
-            <Link href={'#'}>Community Guidelines</Link>
-          </Stack>
-
-          <Stack align={'flex-start'}>
-            <ListHeader>Bollywood Top Celebrities</ListHeader>
-            <Link href={'#'}>Help Center</Link>
-            <Link href={'#'}>Safety Center</Link>
-            <Link href={'#'}>Community Guidelines</Link>
-          </Stack>
-
-          <Stack align={'flex-start'}>
-            <ListHeader>Game & News</ListHeader>
-            <Link href={'#'}>Help Center</Link>
-            <Link href={'#'}>Safety Center</Link>
-            <Link href={'#'}>Community Guidelines</Link>
-          </Stack>
-          
-        </SimpleGrid>
-      </Container>
-
-      <Box
-        borderTopWidth={1}
-        borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.200', 'gray.700')}>
+           {/* <Stack> */}
+           <Box
+        // borderTopWidth={1}
+        // borderStyle={'solid'}
+        // borderColor={useColorModeValue('gray.200', 'gray.700')}
+        >
         <Container
           as={Stack}
           maxW={'6xl'}
@@ -151,20 +100,97 @@ export default function LargeWithAppLinksAndSocial() {
           spacing={4}
           justify={{ md: 'space-between' }}
           align={{ md: 'center' }}>
-          <Text>© 2022 Chakra Templates. All rights reserved</Text>
+          <Text>Connect with us</Text>
           <Stack direction={'row'} spacing={6}>
+          <SocialButton label={'Facebook'} href={'#'} borderStyle={'solid'}>
+              <FaFacebook />
+            </SocialButton>
+            <SocialButton label={'Instagram'} href={'#'}>
+              <FaInstagram />
+            </SocialButton>
             <SocialButton label={'Twitter'} href={'#'}>
               <FaTwitter />
             </SocialButton>
             <SocialButton label={'YouTube'} href={'#'}>
               <FaYoutube />
             </SocialButton>
-            <SocialButton label={'Instagram'} href={'#'}>
-              <FaInstagram />
-            </SocialButton>
+            
           </Stack>
         </Container>
       </Box>
+            {/* </Stack>  */}
+          </Flex> <br /> 
+          <Flex gap={6} color="#D9D9D999">
+             <Link href={'#'}>About US</Link> |
+             <Link href={'#'}>Help Center</Link> |
+             <Link href={'#'}>Privacy Policy </Link> |
+             <Link href={'#'}>Terms of Use</Link>
+           </Flex> <br/><br/>
+        
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 6 }} spacing={8}>
+          <Stack align={'flex-start'}  color="#D9D9D980" fontSize="sm">
+            <Text fontSize="md" fontWeight="600" color="#fff">Popular TV Shows</Text>
+            <Link href={'#'}>Kumkum Bhagya</Link>
+            <Link href={'#'}>Kundali Bhagya</Link>
+            <Link href={'#'}>Bhagya Lakshmi</Link>
+            <Link href={'#'}>Tujhse Hai Raabta</Link>
+            <Link href={'#'}>Kyun Rishton Mein katti Ba</Link>
+          </Stack>
+
+          <Stack align={'flex-start'}  color="#D9D9D980" fontSize="sm">
+            <Text fontSize="md" fontWeight="600" color="#fff">Premium Movies</Text>
+            <Link href={'#'}>Kya Meri Sonam Gupta Bewafa </Link> {/* Gupta Bewafa Hai */}
+            <Link href={'#'}>Helmet</Link>
+            <Link href={'#'}>200 Halla Ho</Link>
+            <Link href={'#'}>14 Phere</Link>
+            <Link href={'#'}>Dial 100</Link>
+          </Stack>
+
+          <Stack align={'flex-start'}  color="#D9D9D980" fontSize="sm">
+            <Text fontSize="md" fontWeight="600" color="#fff">Popular LIVE TV Channels</Text>
+            <Link href={'#'}>Aaj Tak</Link>
+            <Link href={'#'}>Zee News</Link>
+            <Link href={'#'}>Zee TV HD</Link>
+            <Link href={'#'}>&TV HD</Link>
+            <Link href={'#'}>Zee Marathi HD</Link>
+          </Stack>
+
+          <Stack align={'flex-start'}  color="#D9D9D980" fontSize="sm">
+            <Text fontSize="md" fontWeight="600" color="#fff">Popular Web Series</Text>
+            <Link href={'#'}>SunFlower</Link>
+            <Link href={'#'}>Jeet KI Zid</Link>
+            <Link href={'#'}>Bicchoo Ka Khel</Link>
+            <Link href={'#'}>State of Siege: 26/11</Link>
+            <Link href={'#'}>Naxalbari</Link>
+            <Link href={'#'}>Tripling</Link>
+          </Stack>
+
+          <Stack align={'flex-start'}  color="#D9D9D980" fontSize="sm">
+            <Text fontSize="md" fontWeight="600" color="#fff">Bollywood Top Celebrities</Text>
+            <Link href={'#'}>Sunny Leone</Link>
+            <Link href={'#'}>Disha Patani</Link>
+            <Link href={'#'}>Suraj Yadav</Link>
+            <Link href={'#'}>Salman Khan</Link>
+            <Link href={'#'}>Nora Fatehi</Link>
+          </Stack>
+
+          <Stack align={'flex-start'} color="#D9D9D980" fontSize="sm">
+            <Text fontSize="md" fontWeight="600" color="#fff">Game & News</Text>
+            <Link href={'#'}>Play</Link>
+            <Link href={'#'}>Stories</Link>
+            <Link href={'#'}>Articles</Link>
+          </Stack>
+          
+        </SimpleGrid>
+        <br/><br/><br/>
+
+        <Stack align={'flex-start'} color="#D9D9D980" fontSize="sm">
+          <Text>Best viewed on Google Chrome 80+, Microsoft Edge 81+, Mozilla Firefox 75+, Safari 5.1.5+</Text>
+          <Text>Copyright © 2022 Zee Entertainment Enterprises Ltd. All rights reserved.</Text>
+        </Stack>
+      </Container>
+
+      
     </Box>
   );
 }

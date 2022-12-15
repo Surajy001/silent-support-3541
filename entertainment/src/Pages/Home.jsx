@@ -1,8 +1,11 @@
 import React from 'react'
+import TopCarousel from '../Components/TopCarousel'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <TopCarousel />
+    </div>
   )
 }
 
