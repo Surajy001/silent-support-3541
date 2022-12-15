@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from '../Pages/Home';
 import Login from '../Pages/Login';
 import Movies from '../Pages/Movies';
+import Register from '../Pages/Register';
 import Subscription from '../Pages/Subscription';
 
 const AllRoutes = () => {
@@ -11,6 +12,7 @@ const AllRoutes = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
           <Route path='/movies' element={<Movies />} />
           <Route path='/subscription' element={<Subscription />}  />
         </Routes>
