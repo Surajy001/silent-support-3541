@@ -1,14 +1,3 @@
-/*import React from 'react'
-
-const Navbar = () => {
-  return (
-    <div>Navbar</div>
-  )
-}
-
-export default Navbar
-*/
-
 import { ReactNode } from 'react';
 import React from 'react';
 import {Link as RouterLink} from "react-router-dom";
@@ -61,7 +50,7 @@ export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Box bg={useColorModeValue('#0f0617')} px={6} py={4} color="white">
+      <Box bg={useColorModeValue('')} px={6} py={4} color="white">
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           
           <Flex alignItems={'center'} gap={7}>
@@ -85,7 +74,7 @@ export default function Navbar() {
           {/* <input padding="10px" placeholder='Search for Movies,Shows etc'/> */}
           <RouterLink to="/login"><Button  marginRight={5}  colorScheme="purple" >Login</Button></RouterLink>
           <RouterLink to="/subscription">
-          <Button border="0px solid" colorScheme='purple' >BUY PLAN</Button>
+          <Button border="0px solid" colorScheme='purple' spacing={7}>BUY PLAN</Button>
           </RouterLink>
           
             <Stack direction={'row'} spacing={7} marginLeft={5}>
