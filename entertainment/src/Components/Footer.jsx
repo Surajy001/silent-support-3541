@@ -1,13 +1,3 @@
-/*import React from 'react'
-
-const Footer = () => {
-  return (
-    <div>Footer</div>
-  )
-}
-
-export default Footer;
-*/
 import React from 'react'
 import { ReactNode } from 'react';
 import {
@@ -68,7 +58,7 @@ export default function LargeWithAppLinksAndSocial() {
   return (
     <Box
       bg={useColorModeValue('#0f0617')}
-      color={useColorModeValue('white')} mt={5}>
+      color={useColorModeValue('white')} >
       <Container as={Stack} maxW={'8xl'} py={10}>
       <Flex justifyContent={'space-between'}>
       <Stack direction='row' gap={4}  justifyContent="flex-start" p={2} >
