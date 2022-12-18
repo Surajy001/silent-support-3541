@@ -3,7 +3,7 @@
 
 import React from 'react'
 import Slider from "react-slick";
-import BasicCard from './BasicCard';
+// import BasicCard from './BasicCard';
 import Card from 'react-bootstrap/Card';
 
 
