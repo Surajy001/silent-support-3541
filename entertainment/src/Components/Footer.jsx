@@ -58,10 +58,11 @@ export default function LargeWithAppLinksAndSocial() {
   return (
     <Box
       bg={useColorModeValue('#0f0617')}
-      color={useColorModeValue('white')} >
-      <Container as={Stack} maxW={'8xl'} py={10}>
+      color={useColorModeValue('white')} 
+      borderTop="1px solid rgb(49, 54, 61)">
+      <Container as={Stack} maxW={'8xl'} py={6}>
       <Flex justifyContent={'space-between'}>
-      <Stack direction='row' gap={4}  justifyContent="flex-start" p={2} >
+      <Stack direction='row' gap={4}  justifyContent="flex-start" p={1} >
             <Text fontSize="xl" fontWeight="500" >Download Apps</Text>
             <Image  w="100px" h="45px" borderRadius={5} src="https://w7.pngwing.com/pngs/91/37/png-transparent-google-play-android-app-store-android-text-logo-microsoft-store.png" />
             <Image  w="100px" h="45px"  src="https://www.seekpng.com/png/full/22-227594_download-on-the-app-store-badge-available-on.png" />
