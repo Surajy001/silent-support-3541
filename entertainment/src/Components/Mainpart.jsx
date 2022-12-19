@@ -162,7 +162,7 @@ useEffect(()=>{
     <Slider {...settings}>
       {data3.map((item,index)=>{
         return (
-          <RouterLink to={`/movies/${item.id}`}>
+          <RouterLink to={`/mainpart/${item.id}`}>
             <React.Fragment key={index} >
                  <Card style={{ width: 230,
                             height: 300,
@@ -190,6 +190,7 @@ useEffect(()=>{
             // <div>
             //     <h3>{index}</h3>
             // </div>
+            <RouterLink to={`/mainpart/${item.id}`}>
             <React.Fragment key={index} >
                 {/* <BasicCard item={item} /> */}
                  <Card style={{ width: 230,
@@ -205,6 +206,7 @@ useEffect(()=>{
 
                         </Card>
             </React.Fragment>
+            </RouterLink>
         )
       })}
     </Slider>
