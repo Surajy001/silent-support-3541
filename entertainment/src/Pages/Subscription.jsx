@@ -26,6 +26,8 @@ import {
   Button,
 } from '@chakra-ui/react';
 import { FaCheckCircle } from 'react-icons/fa';
+import {Link as RouterLink} from "react-router-dom";
+
 
 function PriceWrapper({ children }) {
   return (
@@ -61,7 +63,9 @@ export default function ThreeTierPricing() {
         justify="center"
         spacing={{ base: 4, lg: 10 }}
         py={10}>
+        
         <PriceWrapper>
+        <RouterLink to={`/payment`} >
           <Box py={4} px={12}>
             <Text fontWeight="500" fontSize="2xl">
               Premium HD
@@ -102,9 +106,12 @@ export default function ThreeTierPricing() {
               </Button>
             </Box>
           </VStack> */}
+           </RouterLink>
         </PriceWrapper>
+     
 
         <PriceWrapper>
+          <RouterLink to={`/payment`} >
           <Box position="relative">
             <Box
               position="absolute"
@@ -142,8 +149,11 @@ export default function ThreeTierPricing() {
                 </Text>
             </Box>
           </Box>
+          </RouterLink>
         </PriceWrapper>
+
         <PriceWrapper>
+          <RouterLink to={`/payment`} >
           <Box py={4} px={12}>
             <Text fontWeight="500" fontSize="2xl">
             Premium 4K
@@ -160,6 +170,7 @@ export default function ThreeTierPricing() {
               12 Months
               </Text>
           </Box>
+          </RouterLink>
         </PriceWrapper>
       </Stack>
     </Box>
