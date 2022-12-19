@@ -14,19 +14,23 @@ import {
 } from '@chakra-ui/react';
 
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
  import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from '../Context/AuthContext';
 
 export default function Login() {
 
   const navigate = useNavigate();
+
+  // const {login}=useContext(AuthContext)
 
   const handleLogin = (e) => {
     e.preventDefault();
     const loggeduser= JSON.parse(localStorage.getItem("user"));
    if(input.email===loggeduser.email && input.password===loggeduser.password){
     localStorage.setItem("loggedin" , true);
+    // login(localStorage.setItem("loggedin" , true))
     navigate("/");
    }else{
     alert("Wrong Email or Password");

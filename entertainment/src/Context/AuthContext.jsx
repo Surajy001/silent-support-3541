@@ -21,6 +21,8 @@ function AuthContextProvider({children}) {
         isAuth:false
     })
 
+    //console.log("ls",localStorage.getItem("loggedin"));
+
     const login=(token)=>{
         setState({...state ,isAuth:true,token})
     }

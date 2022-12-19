@@ -72,6 +72,7 @@ export default function Navbar() {
             {/* <BiSearch size={"45"} border="1px solid" />
           <Input  placeholder='Search for Movies,Shows etc' marginRight={5} /> */}
           {/* <input padding="10px" placeholder='Search for Movies,Shows etc'/> */}
+          {/* <RouterLink to="/login"><Button  marginRight={5}  colorScheme="purple" >Login</Button></RouterLink> */}
           <RouterLink to="/login"><Button  marginRight={5}  colorScheme="purple" >Login</Button></RouterLink>
           <RouterLink to="/subscription">
           <Button border="0px solid" colorScheme='purple' spacing={7}>BUY PLAN</Button>
