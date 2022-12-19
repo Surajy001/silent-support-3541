@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import Slider from "react-slick";
 import Card from 'react-bootstrap/Card';
+import {Link as RouterLink} from "react-router-dom";
 
 const getmovies1=()=>{
   return fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=a390a2f1033c8a75b6556ff75a58b155&language=en-US`)
@@ -110,6 +111,7 @@ useEffect(()=>{
     <Slider {...settings}>
       {data1.map((item,index)=>{
         return (
+          <RouterLink to={`/movies/${item.id}`}>
             <React.Fragment key={index} >
                 <Card style={{ width: 230,
                             height: 400,
@@ -121,6 +123,7 @@ useEffect(()=>{
                           <Card.Img style={{height: 450,width: 900,}} variant="top" src={"https://image.tmdb.org/t/p/w500"+item.poster_path} />
                         </Card>
             </React.Fragment>
+            </RouterLink>
         )
       })}
     </Slider>  
@@ -134,6 +137,7 @@ useEffect(()=>{
             // <div>
             //     <h3>{index}</h3>
             // </div>
+            <RouterLink to={`/movies/${item.id}`}>
             <React.Fragment key={index} >
                 {/* <BasicCard item={item} /> */}
                  <Card style={{ width: 230,
@@ -146,6 +150,7 @@ useEffect(()=>{
                           <Card.Img style={{height: 450,width: 900,}} variant="top" src={"https://image.tmdb.org/t/p/w500"+item.poster_path} />
                         </Card>
             </React.Fragment>
+            </RouterLink>
         )
       })}
     </Slider>
@@ -157,11 +162,8 @@ useEffect(()=>{
     <Slider {...settings}>
       {data3.map((item,index)=>{
         return (
-            // <div>
-            //     <h3>{index}</h3>
-            // </div>
+          <RouterLink to={`/movies/${item.id}`}>
             <React.Fragment key={index} >
-                {/* <BasicCard item={item} /> */}
                  <Card style={{ width: 230,
                             height: 300,
                             margin:"0",
@@ -174,6 +176,7 @@ useEffect(()=>{
                          <Card.Title style={{padding:"4px"}}>{item.name}</Card.Title>
                         </Card>
             </React.Fragment>
+            </RouterLink>
         )
       })}
     </Slider>

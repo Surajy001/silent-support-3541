@@ -142,6 +142,7 @@ useEffect(()=>{
     <Slider {...settings}>
       {data2.map((item,index)=>{
         return (
+          
           <RouterLink to={`/movies/${item.id}`}>
             <React.Fragment key={item.id} >
                 <Card style={{ width: 230,

@@ -1,128 +1,133 @@
-import React, { useState } from "react";
-import { FaRegBell } from "react-icons/fa";
+import {
+  Flex,
+  Box,
+  FormControl,
+  FormLabel,
+  Input,
+  InputGroup,
+  HStack,
+  InputRightElement,
+  Stack,
+  Button,
+  Heading,
+  Text,
+  useColorModeValue,
+  // Link,
+} from '@chakra-ui/react';
+import { useState } from 'react';
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const formstyle = {
-  width: "25%",
-  margin: "auto",
-  marginTop: "15rem",
-  // border: "1px solid ",
-  padding: "20px",
-  // paddnigBottom:"70px", //not working
-  boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px"
+export default function Register() {
+  const [showPassword, setShowPassword] = useState(false);
+
+  //to store value in localstorage
+const handleSubmit = (e) => {
+  e.preventDefault();
+  localStorage.setItem("user",JSON.stringify(input));
+  navigate("/login");
+  //console.log(input);
 };
 
-const inputstyle = {
-  width: "90%",
-  marginTop: "0px",
-  padding: "8px",
-  fontSize: "16px",
-  border: "1px solid"
+const navigate = useNavigate()
+
+const [input , setInput] = useState({
+  name:"",
+  email:"",
+  password:""
+})
+
+const handleChange = (e) => {
+  //console.log(e.target);
+  setInput({ ...input, [e.target.name]: e.target.value });
 };
-
-const lables = {
-  textAlign: "left"
-};
-
-const divs={
-    marginTop:"1rem",
-}
-
-function Register() {
-
-     //to store value in localstorage
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    localStorage.setItem("user",JSON.stringify(input));
-    navigate("/login");
-    //console.log(input);
-  };
-
-  const navigate = useNavigate()
-
-
-  const [input , setInput] = useState({
-    name:"",
-    email:"",
-    password:""
-  })
-
-  const handleChange = (e) => {
-    //console.log(e.target);
-    setInput({ ...input, [e.target.name]: e.target.value });
-  };
-
   return (
-    <div style={{}}>
-
-      <form onSubmit={handleSubmit} style={formstyle}>
-        <div style={divs}>
-          <label style={lables}>
-            <input
-              style={inputstyle}
-              type="text"
-              name="name"
+    <Flex
+      minH={'100vh'}
+      align={'center'}
+      justify={'center'}
+      bg={useColorModeValue('gray.50', 'gray.800')}>
+      <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
+        <Stack align={'center'}>
+          <Heading fontSize={'4xl'} textAlign={'center'}>
+          If You Have Not Register 
+          </Heading>
+        </Stack>
+        <Box
+          rounded={'lg'}
+          bg={useColorModeValue('white', 'gray.700')}
+          boxShadow={'lg'}
+          p={8}>
+          <Stack spacing={4}>
+            {/* <HStack>
+              <Box>
+                <FormControl id="firstName" isRequired>
+                  <FormLabel>First Name</FormLabel>
+                  <Input type="text" />
+                </FormControl>
+              </Box>
+              <Box>
+                <FormControl id="lastName">
+                  <FormLabel>Last Name</FormLabel>
+                  <Input type="text" />
+                </FormControl>
+              </Box>
+            </HStack> */}
+            <FormControl id="text" isRequired>
+              <FormLabel>Name</FormLabel>
+              <Input type="text" name="name"
               placeholder="Enter Name"
               value={input.name}
-              onChange={handleChange}
-            />
-          <p style={{ marginLeft: "10px", marginBottom: "2px"}}>Name</p>
-          </label>
-        </div>
-
-        <div style={divs}>
-
-        <label style={lables}>
-            <input
-              style={inputstyle}
-              type="email"
-              name="email"
+              onChange={handleChange} />
+            </FormControl>
+            <FormControl id="email" isRequired>
+              <FormLabel>Email address</FormLabel>
+              <Input type="email" name="email"
               placeholder="Enter Email"
               value={input.email}
-              onChange={handleChange}
-            />
-            <p style={{ marginLeft: "10px", marginBottom: "2px" }}>Email</p>
-
-          </label>
-        </div>
-
-        <div style={divs}> 
-        <label style={lables}>
-            <input
-              style={inputstyle}
-              type="text"
-              name="password"
+              onChange={handleChange} />
+            </FormControl>
+            <FormControl id="password" isRequired>
+              <FormLabel>Password</FormLabel>
+              <InputGroup>
+                <Input type={showPassword ? 'text' : 'password'} name="password"
               value={input.password}
               onChange={handleChange}
-              placeholder="Enter Password"
-            />
-          <p style={{ marginLeft: "10px", marginBottom: "2px" }}>Password</p>
-          </label>
-        </div>
-
-        <input
-          style={{
-            marginBottom: "20px",
-            marginTop: "20px",
-            width: "95%",
-            padding: "8px",
-            fontSize: "16px"
-          }}
-          type="submit"
-          value="SUBMIT"
-        />
-
-        <div>
-          <p>Have already an account?
-          <Link to="/login">Login Here</Link>
-          </p>
-        </div>
-
-      </form>
-    </div>
+              placeholder="Enter Password" />
+                <InputRightElement h={'full'}>
+                  <Button
+                    variant={'ghost'}
+                    onClick={() =>
+                      setShowPassword((showPassword) => !showPassword)
+                    }>
+                    {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                  </Button>
+                </InputRightElement>
+              </InputGroup>
+            </FormControl>
+            <Stack spacing={10} pt={2}>
+              <Button
+                loadingText="Submitting"
+                size="lg"
+                bg={'blue.400'}
+                color={'white'}
+                _hover={{
+                  bg: 'blue.500',
+                }}
+                onClick={handleSubmit}>
+                Register
+              </Button>
+            </Stack>
+            <Stack pt={6}>
+              <Text align={'center'}>
+                Already a user? <Link to="/login" color={'blue.400'}>Login Here</Link>
+              </Text>
+            </Stack>
+          </Stack>
+        </Box>
+      </Stack>
+    </Flex>
   );
 }
-
-export default Register;
 
